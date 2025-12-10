@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://bsd6mmqaj2i0m"]
+[gd_scene load_steps=5 format=3 uid="uid://bsd6mmqaj2i0m"]
+
+[ext_resource type="PackedScene" uid="uid://bcih1pbb243l5" path="res://scenes/player/player.tscn" id="1_2dwu0"]
+[ext_resource type="Script" uid="uid://sx4ir0ocag3a" path="res://autoload/controls/input_controller.gd" id="1_f4g86"]
+[ext_resource type="PackedScene" uid="uid://84b68pk4cmxd" path="res://scenes/structures/base/structure.tscn" id="3_w0k6x"]
+[ext_resource type="PackedScene" uid="uid://cthernt7wx5bg" path="res://scenes/ui/mission_table/mission_table.tscn" id="4_im6gm"]
 
 [node name="Village" type="Node2D"]
+script = ExtResource("1_f4g86")
+
+[node name="Player" parent="." instance=ExtResource("1_2dwu0")]
+position = Vector2(31, 91)
+
+[node name="Structure" parent="." instance=ExtResource("3_w0k6x")]
+position = Vector2(251, 169)
+packed_scene = ExtResource("4_im6gm")

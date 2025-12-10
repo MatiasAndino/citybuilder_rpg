@@ -12,3 +12,20 @@ config_version=5
 
 config/name="citybuilder_rpg"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/resizable=false
+window/stretch/scale=4.0
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="structure"
+2d_physics/layer_3="pato"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

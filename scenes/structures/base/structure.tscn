@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://84b68pk4cmxd"]
+
+[ext_resource type="Script" uid="uid://ctpuvfxlsmf2" path="res://scripts/structures/structure_base.gd" id="1_lvsbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb3v0"]
+size = Vector2(128.75, 41.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvsbd"]
+size = Vector2(118.75, 31.5)
+
+[node name="Structure" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_lvsbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.875)
+shape = SubResource("RectangleShape2D_tb3v0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 46.25)
+shape = SubResource("RectangleShape2D_lvsbd")
+debug_color = Color(0.88471043, 0.29999578, 0.38487282, 0.41960785)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://b04n6ah2oc1tn"]
+
+[ext_resource type="StyleBox" uid="uid://dgr8rf8mwp8x7" path="res://resources/themes/ui_panel_transparent.tres" id="1_0gjlh"]
+[ext_resource type="Texture2D" uid="uid://cbik1agu14a5r" path="res://assets/ui/icons_temp.png" id="1_t67p5"]
+
+[node name="Mission" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 45)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ImageContainerMission" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_0gjlh")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ImageContainerMission"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/ImageContainerMission/CenterContainer"]
+texture = ExtResource("1_t67p5")
+hframes = 16
+vframes = 10
+frame = 4
+
+[node name="LabelContainerDetail" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_styles/panel = ExtResource("1_0gjlh")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LabelContainerDetail"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="HBoxContainer/LabelContainerDetail/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Titulo de la mision"
+
+[node name="ImageContainerReward" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_0gjlh")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ImageContainerReward"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/ImageContainerReward/CenterContainer"]
+texture = ExtResource("1_t67p5")
+hframes = 16
+vframes = 10
+frame = 9

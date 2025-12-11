@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cthernt7wx5bg"]
+[gd_scene load_steps=5 format=3 uid="uid://cthernt7wx5bg"]
 
 [ext_resource type="Script" uid="uid://1oktt4u5xhf3" path="res://scripts/ui/mission_table/mission_table.gd" id="1_rjac7"]
 [ext_resource type="StyleBox" uid="uid://d05jkop833tkl" path="res://resources/themes/ui_frame.tres" id="2_nr4ny"]
+[ext_resource type="StyleBox" uid="uid://dgr8rf8mwp8x7" path="res://resources/themes/ui_panel_transparent.tres" id="3_2730j"]
 [ext_resource type="PackedScene" uid="uid://b04n6ah2oc1tn" path="res://scenes/ui/mission_table/mission/mission.tscn" id="3_it0o0"]
 
 [node name="MissionTable" type="CanvasLayer"]
@@ -35,6 +36,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="PanelHeader" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -42,18 +44,40 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = ExtResource("3_2730j")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody"]
+[node name="VScrollBar" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody"]
 layout_mode = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_constants/separation = 0
 
-[node name="Mission" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VBoxContainer" instance=ExtResource("3_it0o0")]
+[node name="Mission" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
 layout_mode = 2
 
-[node name="Mission2" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VBoxContainer" instance=ExtResource("3_it0o0")]
+[node name="Mission2" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
 layout_mode = 2
 
-[node name="Mission3" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VBoxContainer" instance=ExtResource("3_it0o0")]
+[node name="Mission3" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
+layout_mode = 2
+
+[node name="Mission4" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
+layout_mode = 2
+
+[node name="Mission5" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
+layout_mode = 2
+
+[node name="Mission6" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
+layout_mode = 2
+
+[node name="Mission7" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
+layout_mode = 2
+
+[node name="Mission8" parent="PanelContainer/MarginContainer/VBoxContainer/PanelBody/VScrollBar/VBoxContainer" instance=ExtResource("3_it0o0")]
 layout_mode = 2
 
 [node name="PanelFooter" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]

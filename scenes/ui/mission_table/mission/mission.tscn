@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b04n6ah2oc1tn"]
+[gd_scene load_steps=5 format=3 uid="uid://b04n6ah2oc1tn"]
 
 [ext_resource type="StyleBox" uid="uid://dgr8rf8mwp8x7" path="res://resources/themes/ui_panel_transparent.tres" id="1_0gjlh"]
+[ext_resource type="Script" uid="uid://yueu825d2gqa" path="res://scripts/ui/mission_table/mission/mission.gd" id="1_s2sm8"]
 [ext_resource type="Texture2D" uid="uid://cbik1agu14a5r" path="res://assets/ui/icons_temp.png" id="1_t67p5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gjlh"]
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 0.6666667)
 
 [node name="Mission" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 45)
@@ -15,6 +19,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0gjlh")
+script = ExtResource("1_s2sm8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

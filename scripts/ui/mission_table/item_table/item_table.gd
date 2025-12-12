@@ -3,12 +3,6 @@ extends PanelContainer
 const COLOR_SELECTED: Color = Color.MEDIUM_SEA_GREEN
 const COLOR_DEFAULT: Color = Color("242424aa")
 
-#var is_selected: bool = false:
-	#set(value):
-		#is_selected = value
-	#get:
-		#return is_selected
-
 var stylebox_selected: StyleBoxFlat
 var stylebox_default: StyleBoxFlat
 
@@ -30,3 +24,5 @@ func set_selected(value: bool) -> void:
 	else:
 		add_theme_stylebox_override("panel", stylebox_default)
 		
+	
+	

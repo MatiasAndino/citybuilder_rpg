@@ -13,6 +13,10 @@ config_version=5
 config/name="citybuilder_rpg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+SceneManager="*res://autoload/scene_manager/scene_manager.gd"
+
 [display]
 
 window/size/viewport_width=640

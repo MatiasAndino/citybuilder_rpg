@@ -12,10 +12,16 @@ signal scene_closed
 func _ready() -> void:
 	index = 0
 	_temp_gen_missions()
-	mission_array[index].set_selected(true)
+	
+	if !mission_array.is_empty():
+		mission_array[index].set_selected(true)
 	
 func _input(event):
 	_input_cancel(event)
+	
+	if mission_array.is_empty():
+		return
+	
 	_input_controls(event)
 	_input_open_mission(event)
 	
@@ -29,6 +35,9 @@ func _input_controls(event) -> void:
 		
 func _input_open_mission(event) -> void:
 	if event.is_action_pressed("ui_accept"):
+		if !mission_array[index]:
+			return
+			
 		var mission_panel = MISSION_PANEL.instantiate()
 		SceneManager.open_scene(mission_panel)
 		mission_panel.set_label("MISION " + str(index))
@@ -50,7 +59,7 @@ func _close_window() -> void:
 func _temp_gen_missions() -> void:
 	#"res://scenes/ui/mission_table/mission/mission.tscn"
 	
-	for i in range(8):
+	for i in range(5):
 		var mission = load("res://scenes/ui/mission_table/item_table/item_table.tscn").instantiate()
 		mission_array.append(mission)
 		box_container.add_child(mission)

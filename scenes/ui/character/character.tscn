@@ -1,0 +1,199 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0bo015gdt10h"]
+
+[ext_resource type="Texture2D" uid="uid://dhwmcb4cb7x24" path="res://assets/sprites/characters/personajes.png" id="1_p7r2t"]
+[ext_resource type="StyleBox" uid="uid://cxcau1fla27g0" path="res://resources/themes/ui_frame_list_elements.tres" id="1_pva8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pva8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fs0ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hn8f4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rws76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs0ax"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7r2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rws76"]
+bg_color = Color(0, 0.5420681, 0.80741346, 1)
+
+[node name="Character" type="PanelContainer"]
+custom_minimum_size = Vector2(140, 90)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("1_pva8p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NamePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pva8p")
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxContainer/NamePanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "PENDEJO"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fs0ax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="SpritePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hn8f4")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer/SpritePanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer/SpritePanel/CenterContainer"]
+scale = Vector2(3, 3)
+texture = ExtResource("1_p7r2t")
+hframes = 4
+vframes = 7
+frame = 14
+
+[node name="LevelPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rws76")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer/LevelPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="LabelExperience" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer/LevelPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "LVL"
+
+[node name="LabelExperience2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/VBoxContainer/LevelPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "100"
+
+[node name="RightPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fs0ax")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="LabelPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p7r2t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 7
+
+[node name="LabelAbilities" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "ABILITIES:"
+
+[node name="LabelTraits" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 6
+text = "TRAITS:"
+
+[node name="LabelReliquies" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 6
+text = "RELIQUIES:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="AbilitiesPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="AbilitiesPanel2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TraitsPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="TraitsPanel2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ReliquiesPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="ReliquiesPanel2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer/LabelPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="ExperiencePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rws76")
